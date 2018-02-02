@@ -1,0 +1,46 @@
+{
+    "nodes":[
+        { 
+            "name":"src1",
+            "type":"source",
+            "input_data_type": "int",
+            "input_data_source": "10"
+        },{
+            "name":"src2",
+            "type":"source",
+            "input_data_type": "int",
+            "input_data_source": "2"
+        },{
+            "name": "join",
+            "number_of_source": 2
+        },{ 
+            "name":"calculation",
+            "type":"function",
+            "func": "add",
+            "data":[
+                {
+                    "type": "int",
+                    "name": "a"
+                },
+                {
+                    "type": "int",
+                    "name": "b"
+                }
+            ],
+            "params": [],
+            "returnType": [
+                {
+                    "name": "result",
+                    "type": "int"
+                }
+            ]
+        }],
+    "edges":[
+        {
+            "source":["src1", "src2"],
+            "receiver":["join"]
+        },{ 
+            "source":["join"],
+            "receiver":["calculation"] 
+        }]
+}

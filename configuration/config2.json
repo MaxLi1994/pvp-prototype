@@ -1,0 +1,67 @@
+{
+    "nodes":[
+        { 
+            "name":"src",
+            "type":"source",
+            "data_type": "opencv_Mat",
+            "data_source": "~/test.jpg"
+        },{ 
+            "name":"step1",
+            "type":"function",
+            "func": "blur",
+            "data": [
+                {
+                    "type": "opencv_Mat",
+                    "name": "origin"
+                }
+            ],
+            "params": [
+                {
+                    "type": "opencv_Size",
+                    "name": "ksize", 
+                    "value": 10
+                }
+            ],
+            "output": [
+                {
+                    "type": "opencv_Mat",
+                    "name": "blurred"
+                }
+            ]
+        },{ 
+            "name":"step2",
+            "type":"funcntion",
+            "func": "canny",
+            "data":[
+                {
+                    "type": "opencv_Mat",
+                    "name": "origin"
+                }
+            ],
+            "params": [
+                {
+                    "type": "float",
+                    "name": "threshold1", 
+                    "value": 1.0
+                }, {
+                    "type": "float",
+                    "name": "threshold2", 
+                    "value": 2.0
+                }
+            ],
+            "returnType": [
+                {
+                    "name": "edges",
+                    "type": "opencv_Mat"
+                }
+            ]
+        }],
+    "edges":[
+        {
+            "source":["src"],
+            "receiver":["step1"]
+        },{ 
+            "source":["step1"],
+            "receiver":["step2"] 
+        }]
+}
