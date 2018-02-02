@@ -28,7 +28,7 @@
                 }
             ],
             "params": [],
-            "returnType": [
+            "output": [
                 {
                     "name": "result",
                     "type": "int"
