@@ -2,7 +2,7 @@
 
 using namespace pvp;
 
-DataBucket& blur(DataBucket &data, Params &params)
+extern "C" DataBucket& blur(DataBucket &data, Params &params)
 {
     cv::Mat src = data.get_opencv_mat("origin");
     cv::Mat dst;
@@ -12,7 +12,7 @@ DataBucket& blur(DataBucket &data, Params &params)
     return data;
 }
 
-DataBucket& canny(DataBucket &data, Params &params)
+extern "C" DataBucket& canny(DataBucket &data, Params &params)
 {
     cv::Mat src = data.get_opencv_mat("origin");
     cv::Mat edges;
@@ -20,5 +20,5 @@ DataBucket& canny(DataBucket &data, Params &params)
     float threshold2 = params.get_float("threshold2");
     cv::Canny(src, edges, threshold1, threshold2);
     data.set_opencv_mat("edges", edges);
-    return datas;
+    return data;
 }
