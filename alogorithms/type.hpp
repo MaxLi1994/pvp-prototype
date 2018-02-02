@@ -29,6 +29,5 @@ namespace pvp
       map<string, cv::Size> map_opencv_size;
   };
 
-  class Data: public Params {};
-  class ReturnType: public Params {};
+  class DataBucket: public Params {};
 }

@@ -3,12 +3,17 @@
         { 
             "name":"src",
             "type":"source",
-            "data_type": "opencv_Mat",
-            "data_source": "~/test.jpg"
+            "data": {
+                "type": "open_Mat",
+                "source": "~/test.jpg"
+            }
         },{ 
             "name":"step1",
             "type":"function",
-            "func": "blur",
+            "func": {
+                "library": "/Users/xx/libCV.so",
+                "name": "blur"
+            },
             "data": [
                 {
                     "type": "opencv_Mat",

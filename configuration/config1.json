@@ -3,20 +3,28 @@
         { 
             "name":"src1",
             "type":"source",
-            "input_data_type": "int",
-            "input_data_source": "10"
+            "data": {
+                "type": "int",
+                "source": "10"
+            }
         },{
             "name":"src2",
             "type":"source",
-            "input_data_type": "int",
-            "input_data_source": "2"
+            "data": {
+                "type": "int",
+                "source": 2
+            }
         },{
-            "name": "join",
+            "name": "join1",
+            "type": "join",
             "number_of_source": 2
         },{ 
             "name":"calculation",
             "type":"function",
-            "func": "add",
+            "func": {
+                "library": "/Users/xx/libcal.so",
+                "name": "add"
+            },
             "data":[
                 {
                     "type": "int",
@@ -38,9 +46,9 @@
     "edges":[
         {
             "source":["src1", "src2"],
-            "receiver":["join"]
+            "receiver":["join1"]
         },{ 
-            "source":["join"],
+            "source":["join1"],
             "receiver":["calculation"] 
         }]
 }

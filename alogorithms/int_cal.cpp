@@ -2,29 +2,26 @@
 
 using namespace pvp;
 
-ReturnType add(Data data, Params params)
+DataBucket add(DataBucket data, Params params)
 {
     int a = data.get_int("a");
     int b = data.get_int("b");
-    ReturnType res;
-    res.set_int("result", a+b);
-    return res;
+    data.set_int("result", a+b);
+    return data;
 }
 
-ReturnType sub(Data data, Params params)
+DataBucket sub(DataBucket data, Params params)
 {
     int a = data.get_int("a");
     int b = data.get_int("b");
-    ReturnType res;
-    res.set_int("result", a-b);
-    return res;
+    data.set_int("result", a-b);
+    return data;
 }
 
-ReturnType mul(Data data, Params params)
+DataBucket mul(DataBucket data, Params params)
 {
     int a = data.get_int("a");
     int b = data.get_int("b");
-    ReturnType res;
-    res.set_int("result", a*b);
-    return res;
+    data.set_int("result", a*b);
+    return data;
 }
