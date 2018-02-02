@@ -72,7 +72,7 @@ Also, they allow all kinds of data or parameters to be passed while keep a unive
 
 ### Configuration File
 
-Although the two buckets seem to have infinite flexibility, the data and parameters need to be defined somewhere so this framework knows what to pass.
+Although the two wrappers seem to have infinite flexibility, the data and parameters need to be defined somewhere so this framework knows what to pass.
 Those are defined in configuration files.
 
 A typical configuration file may look like this:
