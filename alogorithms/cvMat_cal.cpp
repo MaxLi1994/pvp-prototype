@@ -2,7 +2,7 @@
 
 using namespace pvp;
 
-DataBucket blur(DataBucket data, Params params)
+DataBucket& blur(DataBucket &data, Params &params)
 {
     cv::Mat src = data.get_opencv_mat("origin");
     cv::Mat dst;
@@ -12,7 +12,7 @@ DataBucket blur(DataBucket data, Params params)
     return data;
 }
 
-DataBucket canny(DataBucket data, Params params)
+DataBucket& canny(DataBucket &data, Params &params)
 {
     cv::Mat src = data.get_opencv_mat("origin");
     cv::Mat edges;
