@@ -15,9 +15,9 @@
 ### Algorithm API
 
 Any algorithm to be integrated into the pipeline framework needs to do only one thing: expose the entry of the algorithm following certain rules.
-We’ve designed two classes for transmitting data and passing parameters: `data_bucket` and `para_bucket`. With these two classes, we are able to design a universal shape of interface for algorithms to expose:
+We’ve designed two classes for transmitting data and passing parameters: `DataBucket` and `Params`. With these two classes, we are able to design a universal shape of interface for algorithms to expose:
 ```
-extern "C" DataBucket& func(DataBucket &, ParaBucket &)
+extern "C" DataBucket& func(DataBucket &, Params &)
 ```
 
 Here are two sample algorithms:
